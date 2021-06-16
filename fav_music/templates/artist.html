@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View one Artist</title>
+</head>
+<body>
+    <h1>Artist # {{artist.id}}</h1>
+    <h2>Name {{artist.name}}</h2>
+    <h3>Genre {{artist.genre}}</h3>
+
+    <form action="/album/create" method="POST">
+        {% csrf_token %}
+        <label for="title">Title</label>
+        <input type="text" name="title">
+        <label for="release_date">Release Date</label>
+        <input type="date" name="release_date">
+        <label for="songs">Songs</label>
+        <input type="text" name="songs">
+        <button>Create</button>
+    </form>
+    <p><a href="/artist/{{ artist.id }}/edit">Edit</a> | <a href="/artist/{{artist.id}}/delete">Delete</a></td></p>
+    <p><a href="/">Back to All Artists</a></p>
+</body>
+</html>

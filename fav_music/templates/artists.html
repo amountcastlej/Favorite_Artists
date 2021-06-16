@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Artists</title>
+</head>
+<body>
+    <h1>All Artists</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Genre</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for artist in artists %}
+            <tr>
+                <td>{{ artist.id }}</td>
+                <td>{{ artist.name }}</td>
+                <td>{{ artist.genre }}</td>
+                <td><a href="/artist/{{ artist.id }}">Artist</a> | <a href="/artist/{{ artist.id }}/edit">Edit</a> | <a href="/artist/{{artist.id}}/delete">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p><a href="/artist/new">Add a New Artist</a></p>
+</body>
+</html>
